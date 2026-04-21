@@ -1,0 +1,143 @@
+.contact-page {
+  min-height: 100vh;
+  font-family: "Outfit", sans-serif;
+  background-color: #fdfcf8;
+  background-image: radial-gradient(circle, #c9c5bc 1px, transparent 1px);
+  background-size: 22px 22px;
+  color: #111;
+  box-sizing: border-box;
+}
+.contact-page * { box-sizing: border-box; }
+
+/* NAV */
+.contact-nav-wrap {
+  position: sticky;
+  top: 16px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  padding: 0 16px;
+  animation: navDrop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+@keyframes navDrop {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.contact-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  padding: 10px 14px 10px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(10px);
+  white-space: nowrap;
+  width: fit-content;
+}
+.contact-nav-logo {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+.contact-nav-links {
+  display: flex;
+  gap: 18px;
+}
+.contact-nav-links a {
+  font-size: 14px;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.contact-nav-links a:hover { color: #111; }
+.contact-btn-black {
+  background: #111;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  font-family: "Outfit", sans-serif;
+  transition: background 0.2s, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.contact-btn-black:hover { background: #2b2b2b; transform: translateY(-1px); }
+
+/* CONTENT */
+.contact-section {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 80px 32px 80px;
+  text-align: center;
+}
+.contact-title {
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.0;
+  margin-bottom: 20px;
+}
+.contact-hl {
+  background: #ffe697;
+  padding: 2px 10px;
+  border-radius: 8px;
+}
+.contact-subtitle {
+  font-size: 17px;
+  color: #666;
+  line-height: 1.7;
+  max-width: 440px;
+  margin: 0 auto 56px;
+}
+
+/* CARDS */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  text-align: left;
+  margin-bottom: 40px;
+}
+.contact-card {
+  border-radius: 20px;
+  padding: 28px 28px;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.contact-card:hover { transform: translateY(-4px); }
+.contact-card-blue   { background: #cbdbe9; }
+.contact-card-pink   { background: #f6d9de; }
+.contact-card-yellow { background: #ffe697; }
+
+.contact-card-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #888;
+  margin-bottom: 10px;
+}
+.contact-link {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #111;
+  transition: opacity 0.2s;
+}
+.contact-link:hover { opacity: 0.6; }
+
+.contact-note {
+  font-size: 14px;
+  color: #111;
+  margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+  .contact-nav-links { display: none; }
+  .contact-section { padding: 60px 24px 60px; }
+}
