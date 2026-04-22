@@ -5,6 +5,16 @@ import Demiplanebefore1 from "./assets/demiplane-before-1.png";
 import Demiplaneafter1 from "./assets/demiplane-after-1.png";
 import Demiplanebefore2 from "./assets/demiplane-before-2.png";
 import Demiplaneafter2 from "./assets/demiplane-after-2.png"
+import { useState } from "react";
+
+function Lightbox({ src, alt, onClose }) {
+  return (
+    <div className="lightboxOverlay" onClick={onClose}>
+      <button className="lightboxClose" onClick={onClose}>✕</button>
+      <img src={src} alt={alt} className="lightboxImg" onClick={(e) => e.stopPropagation()} />
+    </div>
+  );
+}
 
 function scrollTo(id) {
   const el = document.getElementById(id);
@@ -12,6 +22,7 @@ function scrollTo(id) {
 }
 
 export default function CaseStudyDemiplane({ onBack, onContact }) {
+  const [lightbox, setLightbox] = useState(null);
   return (
     <div className="page">
       <div className="navWrap">
@@ -326,6 +337,46 @@ export default function CaseStudyDemiplane({ onBack, onContact }) {
         </div>
       </section>
 
+<section className="section">
+  <h2 className="sectionTitle">Before & After</h2>
+
+  <div className="beforeAfterBlock">
+    <div className="beforeAfterItem">
+      <p className="label before">Before</p>
+      <img src={Demiplanebefore1} alt="Before design 1" onClick={() => setLightbox({ src: Demiplanebefore1, alt: "Before design 1" })} className="zoomable" />
+      <p className="caption">
+        Filtering system was unclear, making it difficult to find available options. (Click to enlarge)
+      </p>
+    </div>
+    <div className="beforeAfterItem">
+      <p className="label after">After</p>
+      <img src={Demiplaneafter1} alt="After design 1" onClick={() => setLightbox({ src: Demiplaneafter1, alt: "After design 1" })} className="zoomable" />
+      <p className="caption">
+       Introduced clearer filtering and visibility, improving accessibility and user control. (Click to enlarge)
+      </p>
+    </div>
+  </div>
+
+  <div className="beforeAfterBlock">
+    <div className="beforeAfterItem">
+      <p className="label before">Before</p>
+      <img src={Demiplanebefore2} alt="Before design 2" onClick={() => setLightbox({ src: Demiplanebefore2, alt: "Before design 2" })} className="zoomable" />
+      <p className="caption">
+        Users had no clear indication of missing steps, leading to
+        confusion during character creation. 
+      </p>
+    </div>
+    <div className="beforeAfterItem">
+      <p className="label after">After</p>
+      <img src={Demiplaneafter2} alt="After design 2" onClick={() => setLightbox({ src: Demiplaneafter2, alt: "After design 2" })} className="zoomable" />
+      <p className="caption">
+         Added visual indicators and guidance to clearly show incomplete
+        sections and next steps. (Click to enlarge)
+      </p>
+    </div>
+  </div>
+</section>
+
       <section className="section">
         <h2 className="sectionTitle">Reflection</h2>
         <p>
@@ -345,6 +396,7 @@ export default function CaseStudyDemiplane({ onBack, onContact }) {
           ← Back to Portfolio
         </button>
       </div>
+      {lightbox && <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />}
     </div>
   );
 }
