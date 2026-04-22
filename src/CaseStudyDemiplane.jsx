@@ -2,7 +2,7 @@ import "./CaseStudyDemiplane.css";
 import demiplaneCover from "./assets/demiplane-logo.png";
 import DemiplaneCaseStudy from "./assets/Demiplane Case Study.png";
 import Demiplanebefore1 from "./assets/demiplane-before-1.png";
-import Demiplaneafter1 from "./assets/demiplane-after-1.png";
+import Demiplaneafter1 from "./assets/demiplaneafter1.png";
 import Demiplanebefore2 from "./assets/demiplane-before-2.png";
 import Demiplaneafter2 from "./assets/demiplane-after-2.png"
 import { useState } from "react";
