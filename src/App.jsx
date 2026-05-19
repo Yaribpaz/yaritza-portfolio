@@ -281,7 +281,7 @@ function goHome() {
           {[
             "UX / UI Design", "UX Research", "Wireframing", "Prototyping",
             "User Flows", "Usability", "Accessibility", "User-Centered Design",
-            "HTML", "CSS", "JavaScript", "Salesforce (Flows, LWC)",
+            "HTML", "CSS", "JavaScript","Python", "Salesforce (Flows, LWC)",
             "Git", "VS Code", "Figma", "Adobe Creative Suite", "Copilot",
           ].map((t, i) => (
             <Pill key={t} delay={i * 0.05}>{t}</Pill>
